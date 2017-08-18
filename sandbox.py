@@ -40,34 +40,36 @@ def convert_to_html(string, allnote_tag):
 
 
 def process_input(input):
-    return None
+    output = ""
+    current_string = ""
+    allnote_tag = ""
+
+    for line in input:
+        if line_has_markup(line):
+            if current_string != "":
+                output += convert_to_html(current_string, allnote_tag) + "\n"
+            allnote_tag = get_mark_up(line)
+            current_string = trim_mark_up(line)
+        else:
+            current_string += " " + line
+    if current_string != "":
+        output += convert_to_html(current_string, allnote_tag)
+
+    return output
 
 
 def __main__():
     output_file = open("output.txt", "w")
     input_file = open("input.txt", "r")
-
-    current_string = ""
-    mark_up = ""
-
-    for line in input_file:
-        if line_has_markup(line):
-            if current_string != "":
-                output_file.write(convert_to_html(current_string, mark_up) + "\n")
-            current_string = line
-            mark_up = get_mark_up(line)
-            current_string = trim_mark_up(line)
-        else:
-            current_string += " " + line
-    if current_string != "":
-        output_file.write(convert_to_html(current_string, mark_up))
+    output = process_input(input_file)
+    output_file.write(output)
 
 
 __main__()
 
 
-
-# Er soll immer bis zum nächsten allnote-tag suchen
+# Ich könnte auch wie in MD bereiche markieren statt ihn suchen zu lassen. ''' code '''
 # Leere Zeilen sollen aber ignoriert werden
 # Command-line tool draus machen
 # New lines aus String entfernen! Vielleicht gibt es eine Python Anweisung dafür
+# BEM einführen für besseres CSS

@@ -45,6 +45,7 @@ def process_input(input):
     allnote_tag = ""
 
     for line in input:
+        # if line != "\n": hier muss ich prüfen ob der String leer ist!
         if line_has_markup(line):
             if current_string != "":
                 output += convert_to_html(current_string, allnote_tag) + "\n"
@@ -58,10 +59,21 @@ def process_input(input):
     return output
 
 
+def addHTMLPadding(input, title, stylesheet):
+    html_begin = "<!DOCTYPE html>\n<html lang='en'>\n<head>\n    <meta charset='UTF-8'>\n" \
+                 "    <title>" + title + "</title>\n" \
+                 "    <link rel='stylesheet' href='" + stylesheet + "'>\n" \
+                 "</head>\n<body>\n"
+    html_end = "</body>\n</html>"
+    return_string = html_begin + input + html_end
+    return return_string
+
+
 def __main__():
-    output_file = open("output.txt", "w")
     input_file = open("input.txt", "r")
+    output_file = open("output.html", "w")
     output = process_input(input_file)
+    output = addHTMLPadding(output, "example", "css/example.css")
     output_file.write(output)
 
 
@@ -69,7 +81,9 @@ __main__()
 
 
 # Ich könnte auch wie in MD bereiche markieren statt ihn suchen zu lassen. ''' code '''
-# Leere Zeilen sollen aber ignoriert werden
+# Leere Zeilen sollen ignoriert werden
 # Command-line tool draus machen
 # New lines aus String entfernen! Vielleicht gibt es eine Python Anweisung dafür
 # BEM einführen für besseres CSS
+# Am Anfang des Dokuments Mit eigenem Tag Meta-Daten einbauen, zum Beispiel das zu verwendene Stylesheet.
+# Ist kein Stylesheet gesetzt worden wird ein default-Stylesheet gewählt

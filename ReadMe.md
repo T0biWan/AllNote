@@ -10,16 +10,15 @@ Since the result is HTML my notes now get formatted by CSS and I only have to ma
 
 ## The Nameless Mark Up Language
 So far these are the possible tags:
-| AllNote-Tag | HTML_Tag |
-|-------------|----------|
-|      #      |   <h1>   |
-|      ##     |   <h2>   |
-|     ###     |   <h3>   |
-|     ####    |   <h4>   |
-|    #####    |   <h5>   |
-|    ######   |   <h6>   |
-|      +      |    <p>   |
-|      *      |  <code>  |
+- AllNote-Tag | HTML_Tag
+- #      | <h1>   |
+- ##     | <h2>   |
+- ###    | <h3>   |
+- ####   | <h4>   |
+- #####  | <h5>   |
+- ###### | <h6>   |
+- +      | <p>    |
+- *      | <code> |
 
 ## How to use AllNote
 1. Take your notes with the given tags for example:

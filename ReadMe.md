@@ -23,14 +23,14 @@ So far these are the possible tags:
 
 ## How to use AllNote
 1. Take your notes with the given tags for example:
- # Heading
- ## Subheading
- + Some text
- Some more text
- Even more text
+\# Heading
+\## Subheading
+\+ Some text
+\Some more text
+\Even more text
 
- ## Subheading
- + Some other text
+\## Subheading
+\+ Some other text
 
  2. Convert your notes to HTML
  - Set the paths for in- and output

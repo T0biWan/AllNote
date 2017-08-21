@@ -1,16 +1,19 @@
 # AllNote
-As a student I take notes, a lot of notes!
-I got tired of formatting them over and over again in the same way.
+As a student I take notes, a lot of them!
+I got tired of formatting them over and over again to make them more appealing for a re-read.
 At the same time I got to like Markdown and wanted to play a bit with it.
 
-The result is this project where I made my own, super simple, mark up language and convert it into valid html.
+The result is this project where I made my own, super simple, mark up language and convert it, with Python,
+into valid html.
+Yyu will notice that I oriented and borrowed from Markdown since it is so simple and clever made
 Why not stay with Markdown? I wanted more freedom and the possibility to add new features as easy as possible.
 
 Since the result is HTML my notes now get formatted by CSS and I only have to make the stylesheet ones.
+If I don't like anymore it, I can just change the CSS or use different stylesheets for different topics.
 
 ## The Nameless Mark Up Language
 So far these are the possible tags:
-- AllNote-Tag - HTML_Tag
+- AllNote-Tag - HTML-Tag
 - \#      - \<h1>
 - \##     - \<h2>
 - \###    - \<h3>

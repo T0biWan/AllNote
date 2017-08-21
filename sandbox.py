@@ -76,16 +76,3 @@ def __main__():
 
 
 __main__()
-
-
-# Ich könnte auch wie in MD bereiche markieren statt ihn suchen zu lassen. ''' code '''
-# Leere Zeilen sollen ignoriert werden
-# Processing darf erst bei der letzten Zeile enden, momentan wird früher gestoppt
-# Command-line tool draus machen
-# New lines aus String entfernen! Vielleicht gibt es eine Python Anweisung dafür
-# BEM einführen für besseres CSS
-# Am Anfang des Dokuments Mit eigenem Tag Meta-Daten einbauen, zum Beispiel das zu verwendene Stylesheet.
-# Ist kein Stylesheet gesetzt worden wird ein default-Stylesheet gewählt
-# bei code darf kein whitespace verändert werden! Keine Einrückung oder newline
-# erst mal ansehen wir <code> von html gerendert wird, vielleicht muss ich da kein <br> einfügen
-# für newlines ohne Inhalt <br> einfügen

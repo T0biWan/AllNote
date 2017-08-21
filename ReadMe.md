@@ -10,36 +10,38 @@ Since the result is HTML my notes now get formatted by CSS and I only have to ma
 
 ## The Nameless Mark Up Language
 So far these are the possible tags:
-- AllNote-Tag | HTML_Tag
-- #      | <h1>   |
-- ##     | <h2>   |
-- ###    | <h3>   |
-- ####   | <h4>   |
-- #####  | <h5>   |
-- ###### | <h6>   |
-- +      | <p>    |
-- *      | <code> |
+- AllNote-Tag - HTML_Tag
+- \#      - \<h1>
+- \##     - \<h2>
+- \###    - \<h3>
+- \####   - \<h4>
+- \#####  - \<h5>
+- \###### - \<h6>
+- \+      - \<p>
+- \*      - \<code>
 
 ## How to use AllNote
 1. Take your notes with the given tags for example:
-\# Heading
-\## Subheading
-\+ Some text
-\Some more text
-\Even more text
+```
+# Heading
+## Subheading
++ Some text
+Some more text
+Even more text
 
-\## Subheading
-\+ Some other text
+## Subheading
++ Some other text
+```
 
  2. Convert your notes to HTML
  - Set the paths for in- and output
  - Give the HTML-Document an optional title and the path to your desired stylesheet
- ´´´ Python
+ ```python
  def __main__():
     input_file = open("input.txt", "r")
     output_file = open("output.html", "w")
     output = process_input(input_file)
     output = embed_in_html(output, "example", "css/example.css")
     output_file.write(output)
- ´´´
+ ```
  - run the script

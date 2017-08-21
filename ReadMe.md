@@ -22,6 +22,7 @@ So far these are the possible tags:
 - \###### - \<h6>
 - \+      - \<p>
 - \*      - \<code>
+- \++text++ - \<br>
 
 ## How to use AllNote
 1. Take your notes with the given tags for example:
@@ -49,7 +50,7 @@ Even more text
  ```
 - run the script
 - Get yourself some HTML
-```
+```html
 <!DOCTYPE html>
 <html lang='en'>
 <head>

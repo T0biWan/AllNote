@@ -9,7 +9,7 @@ logger.setLevel(logging.INFO)
 
 allnote_html = {"#": ["<h1>", "</h1>"], "##": ["<h2>", "</h2>"], "###": ["<h3>", "</h3>"], "####": ["<h4>", "</h4>"],
                 "#####": ["<h5>", "</h5>"], "######": ["<h6>", "</h6>"], "+": ["<p>", "</p>"],
-                "*": ["<code>", "</code>"]}
+                "*": ["<code>", "</code>"], "++": ["<b>", "</b>"]}
 
 
 def get_mark_up(line):
@@ -39,21 +39,25 @@ def convert_to_html(allnote_tag, string):
     return return_string
 
 
+def process_inline_tags(line):
+    return line
+
+
 def process_input(input):
     output = ""
     tags = []
     text_elements = []
     for line in input:
+        line = process_inline_tags(line)
         if line_has_markup(line):
             tags.append(get_mark_up(line))
             text_elements.append(trim_mark_up(line).rstrip())
-        elif :
+        else:
             text_elements[len(tags) - 1] += " " + line.rstrip()
 
     for tag, element in zip(tags, text_elements):
         output += convert_to_html(tag, element) + "\n"
 
-    print(output)
     return output
 
 

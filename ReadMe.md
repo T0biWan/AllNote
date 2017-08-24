@@ -26,7 +26,7 @@ So far these are the possible tags:
 
 ## How to use AllNote
 1. Take your notes with the given tags for example:
-```
+```markdown
 # Heading
 ## Subheading
 + Some text

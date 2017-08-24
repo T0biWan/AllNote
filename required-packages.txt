@@ -1,0 +1,2 @@
+Markdown==2.6.9
+py-gfm==0.1.3

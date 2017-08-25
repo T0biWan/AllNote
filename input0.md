@@ -58,9 +58,3 @@ a line break is done with a simple linebreak
 
 Escaping is done with backslashes \*useful\*
 
-<ul>
-<li>a<li/>
-<ul>
-<li>a<li/>
-<ul/>
-<ul/>

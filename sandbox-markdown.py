@@ -4,7 +4,17 @@ from mdx_gfm import GithubFlavoredMarkdownExtension as gfm
 
 
 def process_allnote(input):
-    pass
+    output = ""
+    input_line_by_line = input.split("\n")
+    for line in input_line_by_line:
+        markup = get_mark_up(line)
+        line_without_markup = trim_mark_up(line)
+        if is_ordered_list(line):
+            output += process_ordered_list(line)
+        else:
+            output += line
+
+    return output
 
 
 def process_sublist(input):
@@ -33,6 +43,17 @@ def process_sublist(input):
         output += line + "\n"
 
     return output
+
+
+def process_ordered_list(line):
+    markup = get_mark_up(line)
+    line_without_markup = trim_mark_up(line)
+    line = "1. " + line_without_markup
+    return line + "\n"
+
+
+def is_ordered_list(line):
+    return line.startswith("+")
 
 
 def is_unordered_list(line):
@@ -74,14 +95,14 @@ def embed_in_html(input, title, stylesheet):
 
 
 def main():
-    input_file = codecs.open("input1.md", mode="r", encoding="utf-8")
+    input_file = codecs.open("input0.md", mode="r", encoding="utf-8")
     output_file = codecs.open("output.html", "w", encoding="utf-8")
 
     input_text = input_file.read()
     title = input_file.name
     css = "css/example.css"
 
-    input_text = process_sublist(input_text)
+    input_text = process_allnote(input_text)
 
     output = markdown.markdown(input_text, extensions=[gfm()])
     output = embed_in_html(output, title, css)
